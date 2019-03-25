@@ -1,1 +1,1 @@
-const inputs = require('items.json')
+const inputs = require('items.json');
