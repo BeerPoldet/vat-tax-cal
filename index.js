@@ -14,7 +14,7 @@ const showResult = (result) =>{
 const showVatTax = _.flow(
   itemPrice,
   sumItemPrice,
-  total => ({ total, tax, 0, vat, 0 }),
+  total => ({ total, tax: 0, vat: 0 }),
   output => ({ ...output, vat: applyVat(output.total) }),
   output => ({ ...output, tax: applyTax(output.total) }),
   showResult
