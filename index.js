@@ -1,5 +1,31 @@
+<<<<<<< HEAD
 const inputs = require("./items.json");
 
 const applyTax = value => {
   return value * 1.03;
 };
+=======
+const _ = require('lodash');
+const inputs = require('./items.json');
+
+const itemPrice = item => {
+  return item
+    ? item.reduce((acc, item) => acc + item.price * item.amount, 0)
+    : 0
+}
+
+const showResult = (result) =>{
+  console.log("price:"+result.price+", vat: "+result.vat)+", tax: "+result.tax;
+}
+
+const showVatTax = _.flow(
+  itemPrice,
+  sumItemPrice,
+  total => ({ total, tax, 0, vat, 0 }),
+  output => ({ ...output, vat: applyVat(output.total) }),
+  output => ({ ...output, tax: applyTax(output.total) }),
+  showResult
+)
+
+showVatTax(inputs)
+>>>>>>> 15546007b4aef1a717e7c5c8ab69abc131e769cf
