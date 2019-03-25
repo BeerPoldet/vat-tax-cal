@@ -11,6 +11,10 @@ const showResult = (result) =>{
   console.log("price:"+result.price+", vat: "+result.vat)+", tax: "+result.tax;
 }
 
+const applyVat = (price) => {
+    return price * 1.07
+}
+
 const showVatTax = _.flow(
   itemPrice,
   sumItemPrice,
