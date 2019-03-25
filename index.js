@@ -1,3 +1,4 @@
+
 const _ = require('lodash');
 const inputs = require('./items.json');
 
@@ -5,6 +6,14 @@ const itemPrice = item => {
   return item
     ? item.reduce((acc, item) => acc + item.price * item.amount, 0)
     : 0
+}
+
+const sumItemPrice = (items) => {
+  let sum = 0;
+  items.forEach(item => {
+    sum += item.price * item.amount
+  });
+  return sum
 }
 
 const applyTax = value => {
