@@ -1,5 +1,5 @@
-const inputs = require("items.json");
+const inputs = require("./items.json");
 
 const applyTax = value => {
-  return value * (3 / 100);
+  return value * 1.03;
 };
