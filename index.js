@@ -16,6 +16,10 @@ const sumItemPrice = (items) => {
   return sum
 }
 
+const applyTax = value => {
+    return value * 1.03;
+  };
+
 const showResult = (result) =>{
   console.log("price:"+result.price+", vat: "+result.vat)+", tax: "+result.tax;
 }
